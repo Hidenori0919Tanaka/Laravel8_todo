@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+
 
 class MenuController extends Controller
 {
@@ -16,5 +19,10 @@ class MenuController extends Controller
             // ログインしていなかったらログイン画面を表示
             return view('auth/login');
         }
+    }
+
+    public function secret()
+    {
+        return view('secret/secret');
     }
 }
