@@ -22,7 +22,7 @@ Route::get('/', function () {
 // Route::get('/', 'App\Http\Controllers\TodosController@index');
 // Route::get('/', [TodosController::class, 'index']);
 Route::get('menu/menu', [MenuController::class, 'menu'])->name('menu');
-Route::resource('/todos', App\Http\Controllers\TodosController::class);
+Route::resource('/todos', App\Http\Controllers\TodosController::class)->middleware('auth');
 Route::resource('/testinput', App\Http\Controllers\TestinputController::class);
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
